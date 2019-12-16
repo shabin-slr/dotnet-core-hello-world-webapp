@@ -12,8 +12,7 @@ pipeline {
         }
         stage('Build') { 
 		sh 'docker build -t dotnet-core-hello-world-webapp:${env.BUILD_NUMBER}'
-            }
-        }
+	}
     }
 }
 
