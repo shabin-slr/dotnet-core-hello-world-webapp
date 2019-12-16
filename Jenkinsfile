@@ -1,8 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:13-alpine' 
-            args '-p 3000:3000' 
+            image 'mcr.microsoft.com/dotnet/core/sdk:3.0.101-alpine3.10' 
         }
     }
     stages {
@@ -12,9 +11,7 @@ pipeline {
             }
         }
         stage('Build') { 
-            steps {
-		sh 'npm install'
-		sh 'npm build'
+		sh 'docker build -t dotnet-core-hello-world-webapp:${env.BUILD_NUMBER}'
             }
         }
     }
