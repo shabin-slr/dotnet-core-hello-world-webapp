@@ -9,4 +9,9 @@
   <ItemGroup>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HttpRequest" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>
