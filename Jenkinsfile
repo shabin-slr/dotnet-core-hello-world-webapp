@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/dotnet/core/sdk:3.0.101-alpine3.10' 
-        }
-    }
+    agent none
     stages {
         stage('Snyk Scan') {
             steps {
