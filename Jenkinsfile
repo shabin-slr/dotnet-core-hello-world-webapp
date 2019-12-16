@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Snyk Scan') {
             steps {
-		#snykSecurity monitorProjectOnBuild: false, projectName: 'dotnet-core-hello-world-webapp', snykInstallation: 'snyk@latest', snykTokenId: 'Synk Token', targetFile: 'app/dotnet-core-hello-world-web-app.csproj'
+		//snykSecurity monitorProjectOnBuild: false, projectName: 'dotnet-core-hello-world-webapp', snykInstallation: 'snyk@latest', snykTokenId: 'Synk Token', targetFile: 'app/dotnet-core-hello-world-web-app.csproj'
 		snyk test --file=app/dotnet-core-hello-world-web-app.csproj
             }
         }
