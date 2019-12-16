@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
 	    steps { 
-		sh 'docker build -t dotnet-core-hello-world-webapp:${env.BUILD_NUMBER}'
+		sh "docker build -t dotnet-core-hello-world-webapp:${env.BUILD_NUMBER}"
             }
 	}
     }
