@@ -13,18 +13,17 @@ pipeline {
 	}
 
 	stage('Push to ECR') {
-		steps { 
-			//withDockerRegistry(credentialsId: 'ecr:us-east-1:kworx-training-ecr-deployer', url: 'https://807410046616.dkr.ecr.us-east-1.amazonaws.com/dotnet-core-hello-world-webapp') {
-			//	AWS("ecr get-login --no-include-email --region us-east-1")
-			//	sh "docker tag dotnet-core-hello-world-webapp:latest 807410046616.dkr.ecr.us-east-1.amazonaws.com/dotnet-core-hello-world-webapp:latest"
-			//	sh "docker push 807410046616.dkr.ecr.us-east-1.amazonaws.com/dotnet-core-hello-world-webapp:latest"
-			//}
+		steps {
 			script {
 				docker.withRegistry("https://807410046616.dkr.ecr.us-east-1.amazonaws.com/dotnet-core-hello-world-webapp", "ecr:us-east-1:kworx-training-ecr-deployer") {
 					docker.image("dotnet-core-hello-world-webapp:${env.BUILD_NUMBER}").push()
 				}
 			}
 		}
+	}
+
+	stage('Deploy to EKS') {
+		
 	}
     }
 }
