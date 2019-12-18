@@ -23,7 +23,9 @@ pipeline {
 	}
 
 	stage('Deploy to EKS') {
-		echo "Done"
+		steps {
+			echo "Done"
+		}
 	}
     }
 }
