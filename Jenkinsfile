@@ -23,7 +23,7 @@ pipeline {
 	}
 
 	stage('Deploy to EKS') {
-		
+		echo "Done"
 	}
     }
 }
