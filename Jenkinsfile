@@ -24,7 +24,7 @@ pipeline {
 
 	stage('Deploy to EKS') {
 		steps {
-			echo "Done"
+			sh "kubectl set image deployments/dotnetcore-helloworld dotnet-core-hello-world-webapp=807410046616.dkr.ecr.us-east-1.amazonaws.com/dotnet-core-hello-world-webapp:${env.BUILD_NUMBER} --all"
 		}
 	}
     }
